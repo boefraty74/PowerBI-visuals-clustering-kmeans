@@ -262,7 +262,7 @@ maxSamples4autoNumClusters = 5000
 #Type: positive integer, Default:30, Range:[1,100], PossibleValues:NA, Remarks: NA
 maxLenDelegate = 30  
 if(exists("settings_representative_params_maxLenDelegateLabel"))
-  maxLenDelegate = settings_representative_params_maxLenDelegateLabel
+  maxLenDelegate = max(1,min(100,settings_representative_params_maxLenDelegateLabel))
 
 
 ##PBI_PARAM: insignificant principle component threshold
@@ -299,8 +299,7 @@ if(exists("settings_viz_params_weight"))
 #Type: positive integer, Default:4, Range:[1,100], PossibleValues:NA, Remarks: NA
 maxLenLabel2points = 4
 if(exists("settings_labeling_params_maxLenPointLabel"))
-  maxLenLabel2points = as.numeric(settings_labeling_params_maxLenPointLabel)
-
+  maxLenLabel2points = max(1,min(100,settings_labeling_params_maxLenPointLabel))
 ##PBI_PARAM: show only each skipLabel2points for points labels
 #Type: positive number,can be float, Default:1, Range:[1,100], PossibleValues:NA, Remarks: NA
 skipLabel2points = 1
